@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "co.volight.glacier.ficus.FicusKt::init"
+    ],
+    "client": [
+      "co.volight.glacier.ficus.FicusClientKt::initClient"
     ]
   },
   "mixins": [

@@ -1,0 +1,149 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"0": "block/oak_planks",
+		"1": "block/water_still",
+		"particle": "block/oak_planks"
+	},
+	"elements": [
+		{
+			"name": "马桶根",
+			"from": [3, 0, 1],
+			"to": [13, 3, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2, 7]},
+			"faces": {
+				"north": {"uv": [3, 13, 13, 16], "texture": "#0"},
+				"east": {"uv": [4, 13, 15, 16], "texture": "#0"},
+				"south": {"uv": [3, 13, 13, 16], "texture": "#0"},
+				"west": {"uv": [1, 13, 12, 16], "texture": "#0"},
+				"down": {"uv": [3, 4, 13, 15], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"name": "马桶底",
+			"from": [2, 3, 0],
+			"to": [14, 6, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 6.5]},
+			"faces": {
+				"north": {"uv": [2, 10, 14, 13], "texture": "#0"},
+				"east": {"uv": [3, 10, 16, 13], "texture": "#0"},
+				"south": {"uv": [2, 10, 14, 13], "texture": "#0"},
+				"west": {"uv": [0, 10, 13, 13], "texture": "#0"},
+				"down": {"uv": [2, 3, 14, 16], "texture": "#0"}
+			}
+		},
+		{
+			"name": "马桶水池底",
+			"from": [4, 2, 2],
+			"to": [12, 3, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 2.5, 7]},
+			"faces": {
+				"up": {"uv": [4, 2, 12, 12], "texture": "#0"}
+			}
+		},
+		{
+			"name": "马桶水",
+			"from": [4, 2.5, 2],
+			"to": [12, 3.5, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 3, 7]},
+			"faces": {
+				"up": {"uv": [4, 2, 12, 12], "texture": "#1"}
+			}
+		},
+		{
+			"name": "马桶底上1",
+			"from": [2, 3, 0],
+			"to": [14, 6, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 5, 1]},
+			"faces": {
+				"south": {"uv": [2, 10, 14, 13], "texture": "#0"},
+				"up": {"uv": [2, 0, 14, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "马桶底上2",
+			"from": [2, 3, 9],
+			"to": [14, 6, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 5, 11]},
+			"faces": {
+				"north": {"uv": [2, 10, 14, 13], "texture": "#0"},
+				"up": {"uv": [2, 9, 14, 12], "texture": "#0"}
+			}
+		},
+		{
+			"name": "马桶底上2",
+			"from": [2, 2, 3],
+			"to": [5, 6, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 5, 6.5]},
+			"faces": {
+				"east": {"uv": [7, 10, 13, 14], "texture": "#0"},
+				"up": {"uv": [2, 3, 5, 9], "texture": "#0"}
+			}
+		},
+		{
+			"name": "马桶底上3",
+			"from": [11, 2, 3],
+			"to": [14, 6, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 5, 6.5]},
+			"faces": {
+				"west": {"uv": [3, 10, 9, 14], "texture": "#0"},
+				"up": {"uv": [11, 3, 14, 9], "texture": "#0"}
+			}
+		},
+		{
+			"name": "水箱",
+			"from": [1, 4, 12],
+			"to": [15, 18, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 16, 20]},
+			"faces": {
+				"north": {"uv": [1, 0, 15, 12], "texture": "#0"},
+				"east": {"uv": [0, 0, 4, 12], "texture": "#0"},
+				"south": {"uv": [1, 0, 15, 12], "texture": "#0"},
+				"west": {"uv": [12, 0, 16, 12], "texture": "#0"},
+				"up": {"uv": [1, 12, 15, 16], "texture": "#0"},
+				"down": {"uv": [1, 0, 15, 4], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [45, 135, 0],
+			"translation": [0, 3, 0.5],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [45, 135, 0],
+			"translation": [0, 3, 0.5],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 135, 0],
+			"translation": [0, 2, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 135, 0],
+			"translation": [0, 2, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"gui": {
+			"rotation": [30, 135, 0],
+			"translation": [0, -1.25, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"translation": [0, 0, -3.5],
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [0, 1, 2, 3,
+		{
+			"name": "马桶底上",
+			"origin": [13, 14, 18],
+			"children": [4, 5, 6, 7]
+		}, 8]
+}

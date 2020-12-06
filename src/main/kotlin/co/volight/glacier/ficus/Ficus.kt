@@ -1,10 +1,29 @@
 package co.volight.glacier.ficus
 
+import co.volight.glacier.ficus.Ficus.logName
+import co.volight.glacier.ficus.blocks.toilet.Toilet
+import net.minecraft.block.Blocks
+import org.apache.logging.log4j.LogManager
+
+object Ficus {
+    const val id = "ficus"
+    const val logName = "[Ficus]"
+    val logger = LogManager.getLogger()!!
+}
+
 @Suppress("unused")
 fun init() {
-    // This code runs as soon as Minecraft is in a mod-load-ready state.
-    // However, some things (like resources) may still be uninitialized.
-    // Proceed with mild caution.
+    initBlocks()
+    Ficus.logger.info("$logName Blocks initialized")
 
-    println("Hello Fabric world!")
+    initItems()
+    Ficus.logger.info("$logName Items initialized")
+}
+
+fun initBlocks() {
+    Toilet.Oak.reg()
+}
+
+fun initItems() {
+    Toilet.Oak.regBlockItem()
 }
