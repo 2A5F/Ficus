@@ -2,6 +2,21 @@
   "itemGroup.ficus.main": "Ficus",
 
   "block.ficus.white_lamp_block": "White Lamp Block",
+  "block.ficus.orange_lamp_block": "Orange Lamp Block",
+  "block.ficus.magenta_lamp_block": "Magenta Lamp Block",
+  "block.ficus.light_blue_lamp_block": "Light Blue Lamp Block",
+  "block.ficus.yellow_lamp_block": "Yellow Lamp Block",
+  "block.ficus.lime_lamp_block": "Lime Lamp Block",
+  "block.ficus.pink_lamp_block": "Pink Lamp Block",
+  "block.ficus.gray_lamp_block": "Gray Lamp Block",
+  "block.ficus.light_gray_lamp_block": "Light Gray Lamp Block",
+  "block.ficus.cyan_lamp_block": "Cyan Lamp Block",
+  "block.ficus.purple_lamp_block": "Purple Lamp Block",
+  "block.ficus.blue_lamp_block": "Blue Lamp Block",
+  "block.ficus.brown_lamp_block": "Brown Lamp Block",
+  "block.ficus.green_lamp_block": "Green Lamp Block",
+  "block.ficus.red_lamp_block": "Red Lamp Block",
+  "block.ficus.black_lamp_block": "Black Lamp Block",
 
   "block.ficus.oak_toilet": "Oak Toilet",
 
