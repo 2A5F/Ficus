@@ -12,5 +12,5 @@ fun initClient() {
 }
 
 fun initBlockLayer() {
-    //BlockRenderLayerMap.INSTANCE.putBlock(Toilet.Oak.impl, RenderLayer.getCutoutMipped())
+    BlockRenderLayerMap.INSTANCE.putBlock(Toilet.Oak.impl, RenderLayer.getTranslucent())
 }

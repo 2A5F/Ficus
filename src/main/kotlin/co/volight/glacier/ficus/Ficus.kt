@@ -1,6 +1,7 @@
 package co.volight.glacier.ficus
 
 import co.volight.glacier.ficus.Ficus.logName
+import co.volight.glacier.ficus.blocks.light.LampBlock
 import co.volight.glacier.ficus.blocks.toilet.Toilet
 import net.minecraft.block.Blocks
 import org.apache.logging.log4j.LogManager
@@ -21,9 +22,13 @@ fun init() {
 }
 
 fun initBlocks() {
+    LampBlock.White.reg()
+
     Toilet.Oak.reg()
 }
 
 fun initItems() {
+    LampBlock.White.regBlockItem()
+
     Toilet.Oak.regBlockItem()
 }
