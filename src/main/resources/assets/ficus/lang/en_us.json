@@ -18,6 +18,23 @@
   "block.ficus.red_lamp_block": "Red Lamp Block",
   "block.ficus.black_lamp_block": "Black Lamp Block",
 
+  "block.ficus.light15": "Light 15",
+  "block.ficus.light14": "Light 14",
+  "block.ficus.light13": "Light 13",
+  "block.ficus.light12": "Light 12",
+  "block.ficus.light11": "Light 11",
+  "block.ficus.light10": "Light 10",
+  "block.ficus.light9": "Light 9",
+  "block.ficus.light8": "Light 8",
+  "block.ficus.light7": "Light 7",
+  "block.ficus.light6": "Light 6",
+  "block.ficus.light5": "Light 5",
+  "block.ficus.light4": "Light 4",
+  "block.ficus.light3": "Light 3",
+  "block.ficus.light2": "Light 2",
+  "block.ficus.light1": "Light 1",
+  "block.ficus.light0": "Light 0",
+
   "block.ficus.oak_toilet": "Oak Toilet",
 
   "_": ""
