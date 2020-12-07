@@ -6,11 +6,22 @@ import co.volight.glacier.ficus.blocks.never
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
 import net.minecraft.block.*
+import net.minecraft.entity.ai.pathing.NavigationType
+import net.minecraft.fluid.FluidState
+import net.minecraft.fluid.Fluids
+import net.minecraft.item.ItemPlacementContext
+import net.minecraft.state.StateManager
+import net.minecraft.state.property.BooleanProperty
+import net.minecraft.state.property.Properties
 import net.minecraft.util.math.BlockPos
+import net.minecraft.util.math.Direction
 import net.minecraft.world.BlockView
+import net.minecraft.world.WorldAccess
 
-class Light(settings: Settings): Block(settings), JoinItemGroup {
+class Light(settings: Settings): Block(settings), Waterloggable, JoinItemGroup {
     companion object {
+        val WATERLOGGED: BooleanProperty = Properties.WATERLOGGED
+        
         fun setting() : Settings {
             return Settings.of(Material.BARRIER).strength(-1.0f, 3600000.8f)
                 .dropsNothing().noCollision().nonOpaque().allowsSpawning(::never)
@@ -114,6 +125,10 @@ class Light(settings: Settings): Block(settings), JoinItemGroup {
         }
     }
 
+    init {
+        defaultState = stateManager.defaultState.with(WATERLOGGED, false)
+    }
+
     override fun isTranslucent(state: BlockState, world: BlockView, pos: BlockPos): Boolean {
         return true
     }
@@ -125,5 +140,34 @@ class Light(settings: Settings): Block(settings), JoinItemGroup {
     @Environment(EnvType.CLIENT)
     override fun getAmbientOcclusionLightLevel(state: BlockState, world: BlockView, pos: BlockPos): Float {
         return 1.0f
+    }
+
+    override fun getPlacementState(ctx: ItemPlacementContext): BlockState {
+        val fluidState = ctx.world.getFluidState(ctx.blockPos)
+        val bl = fluidState.fluid === Fluids.WATER
+        return super.getPlacementState(ctx)!!.with(WATERLOGGED, bl)
+    }
+
+    override fun getStateForNeighborUpdate(
+        state: BlockState,
+        direction: Direction,
+        newState: BlockState,
+        world: WorldAccess,
+        pos: BlockPos,
+        posFrom: BlockPos
+    ): BlockState? {
+        if (state.get(WATERLOGGED)) {
+            world.fluidTickScheduler.schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world))
+        }
+        return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom)
+    }
+
+    override fun appendProperties(builder: StateManager.Builder<Block?, BlockState?>) {
+        builder.add(WATERLOGGED)
+    }
+
+    override fun getFluidState(state: BlockState): FluidState {
+        return if (state.get(ChainBlock.WATERLOGGED)) Fluids.WATER.getStill(false)
+            else super.getFluidState(state)
     }
 }
