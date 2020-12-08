@@ -8,3 +8,7 @@ import net.minecraft.world.BlockView
 fun never(state: BlockState?, world: BlockView?, pos: BlockPos?, type: EntityType<*>?): Boolean {
     return false
 }
+
+fun never(state: BlockState, world: BlockView, pos: BlockPos): Boolean {
+    return false
+}

@@ -6,7 +6,6 @@ import co.volight.glacier.ficus.blocks.never
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
 import net.minecraft.block.*
-import net.minecraft.entity.ai.pathing.NavigationType
 import net.minecraft.fluid.FluidState
 import net.minecraft.fluid.Fluids
 import net.minecraft.item.ItemPlacementContext
@@ -21,8 +20,8 @@ import net.minecraft.world.WorldAccess
 class Light(settings: Settings): Block(settings), Waterloggable, JoinItemGroup {
     companion object {
         val WATERLOGGED: BooleanProperty = Properties.WATERLOGGED
-        
-        fun setting() : Settings {
+
+        private fun setting() : Settings {
             return Settings.of(Material.BARRIER).strength(-1.0f, 3600000.8f)
                 .dropsNothing().noCollision().nonOpaque().allowsSpawning(::never)
         }

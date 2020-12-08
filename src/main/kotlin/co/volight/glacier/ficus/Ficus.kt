@@ -1,6 +1,7 @@
 package co.volight.glacier.ficus
 
 import co.volight.glacier.ficus.Ficus.logName
+import co.volight.glacier.ficus.blocks.light.GlowGlass
 import co.volight.glacier.ficus.blocks.light.LampBlock
 import co.volight.glacier.ficus.blocks.light.Light
 import co.volight.glacier.ficus.blocks.toilet.Toilet
@@ -40,6 +41,8 @@ fun initBlocks() {
     LampBlock.Red.reg()
     LampBlock.Black.reg()
 
+    GlowGlass.reg()
+
     Light.L15.reg()
     Light.L14.reg()
     Light.L13.reg()
@@ -77,6 +80,8 @@ fun initItems() {
     LampBlock.Green.regBlockItem()
     LampBlock.Red.regBlockItem()
     LampBlock.Black.regBlockItem()
+
+    GlowGlass.regBlockItem()
 
     Light.L15.regBlockItem()
     Light.L14.regBlockItem()

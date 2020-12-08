@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "ficus:white_lamp_block",
+    "ficus:orange_lamp_block",
+    "ficus:magenta_lamp_block",
+    "ficus:light_blue_lamp_block",
+    "ficus:yellow_lamp_block",
+    "ficus:lime_lamp_block",
+    "ficus:pink_lamp_block",
+    "ficus:gray_lamp_block",
+    "ficus:light_gray_lamp_block",
+    "ficus:cyan_lamp_block",
+    "ficus:purple_lamp_block",
+    "ficus:blue_lamp_block",
+    "ficus:brown_lamp_block",
+    "ficus:green_lamp_block",
+    "ficus:red_lamp_block",
+    "ficus:black_lamp_block"
+  ]
+}
