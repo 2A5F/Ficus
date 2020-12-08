@@ -1,0 +1,18 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "0": "block/water_still",
+    "particle": "block/water_still"
+  },
+  "elements": [
+    {
+      "name": "马桶水",
+      "from": [4, 2.5, 2],
+      "to": [12, 3.5, 12],
+      "rotation": {"angle": 0, "axis": "y", "origin": [8, 3, 7]},
+      "faces": {
+        "up": {"uv": [4, 2, 12, 12], "texture": "#0", "tintindex": 0 }
+      }
+    }
+  ]
+}

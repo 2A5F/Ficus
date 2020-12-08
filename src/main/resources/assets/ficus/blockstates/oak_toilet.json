@@ -1,19 +1,82 @@
 {
-  "variants": {
-    "facing=east": {
-      "model": "ficus:block/oak_toilet",
-      "y": 270
+  "multipart": [
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": {
+        "model": "ficus:block/oak_toilet",
+        "y": 270
+      }
     },
-    "facing=west": {
-      "model": "ficus:block/oak_toilet",
-      "y": 90
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": {
+        "model": "ficus:block/oak_toilet",
+        "y": 90
+      }
     },
-    "facing=south": {
-      "model": "ficus:block/oak_toilet"
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": {
+        "model": "ficus:block/oak_toilet"
+      }
     },
-    "facing=north": {
-      "model": "ficus:block/oak_toilet",
-      "y": 180
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": {
+        "model": "ficus:block/oak_toilet",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "waterlogged": "false",
+        "facing": "east"
+      },
+      "apply": {
+        "model": "ficus:block/toilet_water",
+        "y": 270,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "waterlogged": "false",
+        "facing": "west"
+      },
+      "apply": {
+        "model": "ficus:block/toilet_water",
+        "y": 90,
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "waterlogged": "false",
+        "facing": "south"
+      },
+      "apply": {
+        "model": "ficus:block/toilet_water",
+        "uvlock": true
+      }
+    },
+    {
+      "when": {
+        "waterlogged": "false",
+        "facing": "north"
+      },
+      "apply": {
+        "model": "ficus:block/toilet_water",
+        "y": 180,
+        "uvlock": true
+      }
     }
-  }
+  ]
 }
