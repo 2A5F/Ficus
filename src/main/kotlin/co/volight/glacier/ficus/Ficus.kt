@@ -5,7 +5,10 @@ import co.volight.glacier.ficus.blocks.light.GlowGlass
 import co.volight.glacier.ficus.blocks.light.LampBlock
 import co.volight.glacier.ficus.blocks.light.Light
 import co.volight.glacier.ficus.blocks.toilet.Toilet
-import net.minecraft.block.Blocks
+import co.volight.glacier.ficus.entities.Cube
+import co.volight.glacier.ficus.entities.car.HoverCar
+import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
+import net.minecraft.entity.mob.MobEntity
 import org.apache.logging.log4j.LogManager
 
 object Ficus {
@@ -21,6 +24,9 @@ fun init() {
 
     initItems()
     Ficus.logger.info("$logName Items initialized")
+
+    initEntityType()
+    Ficus.logger.info("$logName Entity Type initialized")
 }
 
 fun initBlocks() {
@@ -101,4 +107,10 @@ fun initItems() {
     Light.L0.regBlockItem()
 
     Toilet.Oak.regBlockItem()
+}
+
+fun initEntityType() {
+    Cube.regType()
+    FabricDefaultAttributeRegistry.register(Cube.type, MobEntity.createMobAttributes())
+    HoverCar.Red.regType()
 }

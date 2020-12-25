@@ -3,6 +3,8 @@ package co.volight.glacier.ficus
 import co.volight.glacier.ficus.Ficus.logName
 import co.volight.glacier.ficus.blocks.light.GlowGlass
 import co.volight.glacier.ficus.blocks.toilet.Toilet
+import co.volight.glacier.ficus.entities.Cube
+import co.volight.glacier.ficus.entities.car.HoverCar
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.render.ColorProviderRegistry
 import net.minecraft.block.BlockState
@@ -18,6 +20,9 @@ fun initClient() {
 
     initBlockColors()
     Ficus.logger.info("$logName Block Colors initialized")
+
+    initEntityRender()
+    Ficus.logger.info("$logName Entity Render initialized")
 }
 
 fun initBlockLayer() {
@@ -30,4 +35,9 @@ fun initBlockColors() {
     ColorProviderRegistry.BLOCK.register({ _: BlockState, world: BlockRenderView?, pos: BlockPos?, _: Int ->
         if (world != null && pos != null) BiomeColors.getWaterColor(world, pos) else -1
     }, Toilet.Oak.impl)
+}
+
+fun initEntityRender() {
+    Cube.regRender()
+    HoverCar.Red.regRender()
 }
