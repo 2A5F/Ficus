@@ -26,31 +26,50 @@ enum class HoverCarColor {
     Red
 }
 
-class HoverCar(
-    entityType: EntityType<out HoverCar>, world: World,
-    val color: HoverCarColor,
-)
-    : AHoverCar(
-    entityType, world,
-    10f, 1f,
-    10f, 1f,
-    10f, 1f,
-    10f, 1f,
-) {
-        object Red : RegEntity<HoverCar> {
-            override val name = "red_hover_car"
-            override val type: EntityType<HoverCar> by lazy {
-                FabricEntityTypeBuilder.create<HoverCar>(SpawnGroup.MISC) { t, w ->
-                    HoverCar(t, w, HoverCarColor.Red)
-                } .dimensions(EntityDimensions.fixed(3f, 2f)).build()
-            }
+class HoverCar : AHoverCar {
+    val color: HoverCarColor
 
-            @Environment(EnvType.CLIENT)
-            override fun render(dispatcher: EntityRenderDispatcher, context: EntityRendererRegistry.Context): EntityRenderer<HoverCar> {
-                return HoverCarRenderer(dispatcher)
-            }
+    constructor(entityType: EntityType<out HoverCar>, world: World, color: HoverCarColor) : super(entityType, world,
+        10f, 1f,
+        10f, 1f,
+        10f, 1f,
+        10f, 1f) {
+        this.color = color
+    }
 
-        }
+    constructor(entityType: EntityType<out HoverCar>, world: World, x: Double, y: Double, z: Double, color: HoverCarColor) : super(entityType, world, x, y, z,
+        10f, 1f,
+        10f, 1f,
+        10f, 1f,
+        10f, 1f) {
+        this.color = color
+    }
+
+    object Red : RegHoverCar {
+        override val name = "red_hover_car"
+        override val type: EntityType<HoverCar> by lazy { buildType() }
+        override val color = HoverCarColor.Red
+    }
+
+}
+
+interface RegHoverCar : RegEntity<HoverCar> {
+    val color: HoverCarColor
+
+    fun buildType(): EntityType<HoverCar> {
+        return FabricEntityTypeBuilder.create<HoverCar>(SpawnGroup.MISC) { t, w ->
+            HoverCar(t, w, color)
+        } .dimensions(EntityDimensions.fixed(3f, 2f)).build()
+    }
+
+    @Environment(EnvType.CLIENT)
+    override fun render(dispatcher: EntityRenderDispatcher, context: EntityRendererRegistry.Context): EntityRenderer<HoverCar> {
+        return HoverCarRenderer(dispatcher)
+    }
+
+    fun build(world: World, x: Double, y: Double, z: Double): HoverCar {
+        return HoverCar(HoverCar.Red.type, world, x, y, z, color)
+    }
 }
 
 @Environment(EnvType.CLIENT)

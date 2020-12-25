@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityType
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.Packet
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket
+import net.minecraft.util.math.Vec3d
 import net.minecraft.world.World
 
 abstract class AHoverCar(
@@ -19,6 +20,20 @@ abstract class AHoverCar(
     init {
         stepHeight = 2.0f
         inanimate = true
+    }
+
+    constructor(
+        entityType: EntityType<out AHoverCar>, world: World, x: Double, y: Double, z: Double,
+        moveSpeed: Float, moveAcc: Float,
+        brakeSpeed: Float, brakeAcc: Float,
+        climbSpeed: Float, climbAcc: Float,
+        fallSpeed: Float, fallAcc: Float,
+    ) : this(entityType, world, moveSpeed, moveAcc, brakeSpeed, brakeAcc, climbSpeed, climbAcc, fallSpeed, fallAcc) {
+        this.updatePosition(x, y, z)
+        velocity = Vec3d.ZERO
+        prevX = x
+        prevY = y
+        prevZ = z
     }
 
     override fun isCollidable(): Boolean {
